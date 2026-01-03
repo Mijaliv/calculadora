@@ -35,9 +35,7 @@ La calculadora permite realizar operaciones básicas (suma, resta, multiplicaci�
 
 1. Ingrese los números y seleccione el operador deseado.
 2. Presione el botón "=" para obtener el resultado.
-3. Consulte el historial de operaciones para ver los cálculos realizados.
 
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, siéntete libre de abrir un issue o enviar un pull request.
-```
