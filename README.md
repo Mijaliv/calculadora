@@ -1,4 +1,3 @@
-```markdown
 # Calculadora Simple
 
 Este proyecto consiste en una calculadora simple que emula las funcionalidades de una calculadora, desarrollada en el marco de la materia Práctica Profesionalizante I. El objetivo fue poner en práctica los conocimientos adquiridos en HTML, CSS y JavaScript a lo largo de dos semanas.
