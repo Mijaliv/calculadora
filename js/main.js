@@ -12,16 +12,16 @@ operacion = "";
 
 teclas.forEach(
     function(tecla) {
-        tecla.addEventListener("click", function() 
+        tecla.addEventListener("click", function()
         {
             actual += tecla.innerText;
             pantalla[0].textContent = actual;
         });
 });
 
-borrar1.forEach(function(borrar1) 
+borrar1.forEach(function(borrar1)
 {
-    borrar1.addEventListener("click", function() 
+    borrar1.addEventListener("click", function()
     {
         pantalla[0].textContent = pantalla[0].textContent.substring( 0 , pantalla[0].textContent.length - 1);
         actual = pantalla[0].textContent;
@@ -38,47 +38,45 @@ borrar.forEach(function(borrar) {
 });
 
 operadores.forEach(function(operador) {
-    operador.addEventListener("click", function() 
+    operador.addEventListener("click", function()
     {
-        if (actual != "") 
+        if (actual != "")
         {
             anterior = actual;
-            actual = ""                               
-        }      
-        operacion = operador.innerText;  
+            actual = ""
+        }
+        operacion = operador.innerText;
     });
 });
 
-igual.forEach(function(igual) 
+igual.forEach(function(igual)
 {
-    igual.addEventListener("click", function() 
+    igual.addEventListener("click", function()
     {
         actual = pantalla[0].textContent;
         anterior = parseFloat(anterior);
         actual = parseFloat(actual);
+        let resultado;
         switch(operacion)
         {
             case "+":
-                     pantalla[0].textContent = "" + (anterior + actual);
+                     resultado = anterior + actual;
                      break;
             case "-":
-                     pantalla[0].textContent = "" + (anterior - actual);
+                     resultado = anterior - actual;
                      break;
             case "*":
-                     pantalla[0].textContent = "" + (anterior * actual);
+                     resultado = anterior * actual;
                      break;
             case "/":
-                     pantalla[0].textContent = "" + (anterior / actual);
-                     break;              
+                     resultado = anterior / actual;
+                     break;
         }
+        if (resultado.toString().includes('.') && resultado.toString().split('.')[1].length > 6) {
+            resultado = Math.trunc(resultado * 1000) / 1000;
+        }
+        pantalla[0].textContent = "" + resultado;
         actual = pantalla[0].textContent
 
     });
-});
-
-const darkModeButton = document.querySelector('.dark-mode-button');
-const body = document.querySelector('body');
-
-darkModeButton.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
 });
